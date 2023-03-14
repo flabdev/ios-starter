@@ -13,6 +13,13 @@ Cocoapods
 ```bash
 git clone https://github.com/flabdev/ios-starter.git
 ```
+**Follow below steps to install cocoapods**
+
+Open terminal and type:
+
+```bash
+sudo gem install cocoapods
+```
 
 **Follow below steps to run the project**
 
