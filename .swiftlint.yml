@@ -16,6 +16,7 @@ excluded: # paths to ignore during linting.
   - Swift Style Guide.playground
   - fastlane/*
   - MailChimp/Classes/Analytic Events/*
+  - Pods
 
 opt_in_rules:
   - anyobject_protocol
