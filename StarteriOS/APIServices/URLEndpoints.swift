@@ -7,8 +7,6 @@
 
 import Foundation
 
-// mock api sample: https://mocki.io/v1/e93144a0-0c50-4cb4-b13b-f031613fe61e
-
 // This endpoint will be have path & queryItems for the urls which we use in this project.
 struct Endpoint {
     var path: String
@@ -41,10 +39,4 @@ extension Endpoint {
     static var getCards: Self {
         Endpoint(path: "v1/e93144a0-0c50-4cb4-b13b-f031613fe61e", queryItems: [])
     }
-    
-    // Parameter api sample
-//    static func stockSummary(withSymbol symbol: String) -> Self {
-//        Endpoint(path: "stock/v2/get-summary",queryItems: [URLQueryItem(name: "symbol", value: symbol),
-//                                                            URLQueryItem(name: "region", value: "US")])
-//    }
 }
