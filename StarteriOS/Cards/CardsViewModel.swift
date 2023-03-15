@@ -25,6 +25,7 @@ class CardsViewModel: NSObject {
     
     override init() {
         super.init()
+        self.fetchData()
     }
     
     // Fetch Data from server and update the

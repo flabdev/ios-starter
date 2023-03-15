@@ -1,8 +1,8 @@
 //
 //  UtilitiesManager.swift
-//  Trading
+//  StarteriOS
 //
-//  Created by Nagesh Kumar Mishra on 22/12/22.
+//  Created by Nagesh Kumar Mishra on 20/02/23.
 //
 
 import Foundation
@@ -15,8 +15,7 @@ struct UtilitiesManager {
                 let data = try Data(contentsOf: url)
                 return data
             } catch {
-                print("error:\(error)")
-                
+                AppLogger.shared.error("JSON load failed with error: \(error)")
             }
         }
         return nil
@@ -27,10 +26,8 @@ struct UtilitiesManager {
             let decodedObject = try JSONDecoder().decode(T.self, from: data)
             return decodedObject
         } catch {
-            print("error: - \(error)")
+            AppLogger.shared.error("Failed to load Decoder object with error: \(error)")
         }
         return nil
     }
-    
-
 }

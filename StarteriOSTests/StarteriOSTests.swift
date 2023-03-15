@@ -32,5 +32,21 @@ final class StarteriOSTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    // Check response is not nil 
+    func testResponse() throws {
+       let cardsViewModel = CardsViewModel()
+         cardsViewModel.bindViewModelToController = {
+             XCTAssertNotNil(cardsViewModel.cardModel?.cards)
+        }
+    }
+    
+    // Check url generation is right
+    func testGetCardURLGeneration() {
+        let endpoint = Endpoint.getCards
+        let request = endpoint.url
+        XCTAssertEqual(request, URL(string: "https://mocki.io/v1/e93144a0-0c50-4cb4-b13b-f031613fe61e?"))
+    }
+    
 
 }

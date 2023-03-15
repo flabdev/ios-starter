@@ -32,9 +32,10 @@
 		B98D835029BF1A61000B3BAA /* TimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D834129BF1A61000B3BAA /* TimeZone.swift */; };
 		B98D835129BF1A61000B3BAA /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D834229BF1A61000B3BAA /* Encodable.swift */; };
 		B98D835229BF1A61000B3BAA /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D834329BF1A61000B3BAA /* DateFormatter.swift */; };
-		B98D835729BF1DD7000B3BAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D835429BF1DD6000B3BAA /* ViewController.swift */; };
+		B98D835729BF1DD7000B3BAA /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D835429BF1DD6000B3BAA /* CardViewController.swift */; };
 		B98D835829BF1DD7000B3BAA /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D835529BF1DD6000B3BAA /* CardsViewModel.swift */; };
 		B98D835929BF1DD7000B3BAA /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D835629BF1DD6000B3BAA /* CardModel.swift */; };
+		B98D839B29C1984B000B3BAA /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D839A29C1984B000B3BAA /* CardsCell.swift */; };
 		FE6EB863CA9D4C001B5A6A6E /* Pods_StarteriOS_StarteriOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3B9665836F8C69D13D12FC /* Pods_StarteriOS_StarteriOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,9 +92,10 @@
 		B98D834129BF1A61000B3BAA /* TimeZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZone.swift; sourceTree = "<group>"; };
 		B98D834229BF1A61000B3BAA /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		B98D834329BF1A61000B3BAA /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
-		B98D835429BF1DD6000B3BAA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B98D835429BF1DD6000B3BAA /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		B98D835529BF1DD6000B3BAA /* CardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
 		B98D835629BF1DD6000B3BAA /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		B98D839A29C1984B000B3BAA /* CardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		CE3B9665836F8C69D13D12FC /* Pods_StarteriOS_StarteriOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarteriOS_StarteriOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,7 +229,8 @@
 		B98D835329BF1DD6000B3BAA /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				B98D835429BF1DD6000B3BAA /* ViewController.swift */,
+				B98D839A29C1984B000B3BAA /* CardsCell.swift */,
+				B98D835429BF1DD6000B3BAA /* CardViewController.swift */,
 				B98D835529BF1DD6000B3BAA /* CardsViewModel.swift */,
 				B98D835629BF1DD6000B3BAA /* CardModel.swift */,
 			);
@@ -505,7 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B98D835229BF1A61000B3BAA /* DateFormatter.swift in Sources */,
-				B98D835729BF1DD7000B3BAA /* ViewController.swift in Sources */,
+				B98D835729BF1DD7000B3BAA /* CardViewController.swift in Sources */,
 				B98D834829BF1A61000B3BAA /* APIManager.swift in Sources */,
 				B98D834429BF1A61000B3BAA /* UtilitiesManager.swift in Sources */,
 				B98D834E29BF1A61000B3BAA /* ConsoleDestination.swift in Sources */,
@@ -516,6 +519,7 @@
 				B98D834A29BF1A61000B3BAA /* ContextInfo.swift in Sources */,
 				B98D834F29BF1A61000B3BAA /* LogDestination.swift in Sources */,
 				B98D835829BF1DD7000B3BAA /* CardsViewModel.swift in Sources */,
+				B98D839B29C1984B000B3BAA /* CardsCell.swift in Sources */,
 				B98D834C29BF1A61000B3BAA /* LogMessage.swift in Sources */,
 				B98D830229BF1A37000B3BAA /* AppDelegate.swift in Sources */,
 				B98D830429BF1A37000B3BAA /* SceneDelegate.swift in Sources */,
