@@ -26,7 +26,7 @@ struct APIService {
     func fetchData(url: URL?, requestType: RequestHttpMethod, onCompletion: @escaping ServiceDataResponse, onFailure: @escaping FailureReason) {
         guard let url = url,
               let hostName = url.host else {
-            AppLogger.shared.error("URL not found ", module: AppLogger.Module.NETWORK)
+            Logger.shared.error("URL not found ", module: Logger.Module.NETWORK)
             return
         }
         let request = NSMutableURLRequest(url: url as URL ,

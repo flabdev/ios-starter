@@ -22,7 +22,7 @@ class LogDestination: Hashable, Equatable {
     var asynchronously = true
     
     // Default log level
-    var minLevel = AppLogger.Level.info
+    var minLevel = Logger.Level.info
     
     struct LevelString {
         let verbose = "VERBOSE"
@@ -44,7 +44,7 @@ class LogDestination: Hashable, Equatable {
         queue = DispatchQueue(label: queueLabel, target: queue)
     }
     
-    func send(_ level: AppLogger.Level, msg: String, module: String = "") -> String? {
+    func send(_ level: Logger.Level, msg: String, module: String = "") -> String? {
         var formattedMessage: String?
         if logFormat == LogFormat.JSON {
             formattedMessage = messageToJSON(level, msg: msg, module: module)
@@ -77,7 +77,7 @@ class LogDestination: Hashable, Equatable {
     /* Checks if level is at least minLevel or if a minLevel filter for that path does exist
      * returns boolean and can be used to decide if a message should be logged or not
      */
-    func shouldLevelBeLogged(_ level: AppLogger.Level) -> Bool {
+    func shouldLevelBeLogged(_ level: Logger.Level) -> Bool {
             var shouldLogged = false
             if level.rawValue >= minLevel.rawValue {
                 shouldLogged = true
@@ -85,7 +85,7 @@ class LogDestination: Hashable, Equatable {
         return shouldLogged
     }
     
-    func messageToJSON(_ level: AppLogger.Level, msg: String, module: String = "") -> String? {
+    func messageToJSON(_ level: Logger.Level, msg: String, module: String = "") -> String? {
         let isoFormatter = ISO8601DateFormatter()
         let logMsg = LogMessage(module: module, message: msg, dateTime: isoFormatter.string(from: Date()), logLevel: levelWord(level), context: ContextInfo())
         var dict = [String: Any]()
@@ -93,7 +93,7 @@ class LogDestination: Hashable, Equatable {
         do {
             dict = try logMsg.asDictionary() as [String: Any]
         } catch {
-            AppLogger.shared.error("failed to convert log message object into dictionary!", module: AppLogger.Module.UTILITIES)
+            Logger.shared.error("failed to convert log message object into dictionary!", module: Logger.Module.UTILITIES)
             return jsonStringFromDict(["module": module, "level": levelWord(level), "message": msg])
         }
         return jsonStringFromDict(dict)
@@ -107,12 +107,12 @@ class LogDestination: Hashable, Equatable {
             let jsonData = try JSONSerialization.data(withJSONObject: dict, options: [])
             jsonString = String(data: jsonData, encoding: .utf8)
         } catch {
-            AppLogger.shared.error("AppLogger could not create JSON from dict.", module: AppLogger.Module.UTILITIES)
+            Logger.shared.error("AppLogger could not create JSON from dict.", module: Logger.Module.UTILITIES)
         }
         return jsonString
     }
     
-    func formatMessage(level: AppLogger.Level, msg: String, module: String = "") -> String {
+    func formatMessage(level: Logger.Level, msg: String, module: String = "") -> String {
         var text = DateFormatter.formatDate("yyyy-MM-dd HH:mm:ss", timeZone: "UTC")
         let padding = " "
         text += padding + levelWord(level)
@@ -125,7 +125,7 @@ class LogDestination: Hashable, Equatable {
         return text
     }
     
-    func levelWord(_ level: AppLogger.Level) -> String {
+    func levelWord(_ level: Logger.Level) -> String {
         
         var str = ""
         
@@ -152,7 +152,7 @@ class LogDestination: Hashable, Equatable {
     // MARK: - Hashable protocol
     public lazy var hashValue: Int = self.defaultHashValue
     var defaultHashValue: Int {
-        AppLogger.shared.info("defaultHashValue")
+        Logger.shared.info("defaultHashValue")
         return 0
         
     }
@@ -163,7 +163,7 @@ class LogDestination: Hashable, Equatable {
     
     // MARK: - Equatable protocol
     static func == (lhs: LogDestination, rhs: LogDestination) -> Bool {
-        AppLogger.shared.info("LogDestination")
+        Logger.shared.info("LogDestination")
         return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
 }

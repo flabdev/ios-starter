@@ -11,7 +11,7 @@ import Foundation
 class ConsoleDestination: LogDestination {
     
     override var defaultHashValue: Int {
-        AppLogger.shared.info("ConsoleDestination defaultHashValue")
+        Logger.shared.info("ConsoleDestination defaultHashValue")
         return 1
         
     }
@@ -21,7 +21,7 @@ class ConsoleDestination: LogDestination {
     }
     
     // print to Xcode Console. uses full base class functionality
-    override func send(_ level: AppLogger.Level, msg: String, module: String = "") -> String? {
+    override func send(_ level: Logger.Level, msg: String, module: String = "") -> String? {
         let formattedString = super.send(level, msg: msg, module: module)
         
         if let str = formattedString {

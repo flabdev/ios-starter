@@ -9,8 +9,8 @@
 import Foundation
 
 @objcMembers
-class AppLogger: NSObject {
-    static let shared = AppLogger()
+class Logger: NSObject {
+    static let shared = Logger()
     
     // Log levels
    @objc enum Level: Int {
@@ -39,7 +39,7 @@ class AppLogger: NSObject {
         #if DEBUG
         let console = ConsoleDestination()
         console.minLevel = .debug
-        AppLogger.destinations.insert(console)
+        Logger.destinations.insert(console)
         #endif
     }
     
@@ -49,39 +49,39 @@ class AppLogger: NSObject {
     // MARK: Destination Handling
     @discardableResult
     func addDestination(_ destination: LogDestination) -> Bool {
-        if AppLogger.destinations.contains(destination) {
+        if Logger.destinations.contains(destination) {
             return false
         }
-        AppLogger.destinations.insert(destination)
+        Logger.destinations.insert(destination)
         return true
     }
     
     // remove Destination
     @discardableResult
     func removeDestination(_ destination: LogDestination) -> Bool {
-        if !AppLogger.destinations.contains(destination) {
+        if !Logger.destinations.contains(destination) {
             return false
         }
-        AppLogger.destinations.remove(destination)
+        Logger.destinations.remove(destination)
         return true
     }
     
     // Remove all the destination to restart logging
     func removeAllDestinations() {
-        AppLogger.destinations.removeAll()
+        Logger.destinations.removeAll()
     }
     
     // Destination count
     func countDestinations() -> Int {
-        AppLogger.shared.info("countDestinations")
-        return AppLogger.destinations.count
+        Logger.shared.info("countDestinations")
+        return Logger.destinations.count
     }
     
     /*
      * Update log level if it's not the console
      */
     func updateLog(level: Level) {
-        for dest in AppLogger.destinations {
+        for dest in Logger.destinations {
             guard (dest as? ConsoleDestination) == nil else {
                 continue
             }
@@ -116,19 +116,19 @@ class AppLogger: NSObject {
     }
     
     // custom logging to manually adjust values
-    func log(level: AppLogger.Level, message: @autoclosure () -> String, module: String = "") {
+    func log(level: Logger.Level, message: @autoclosure () -> String, module: String = "") {
         dispatch_send(level: level, message: message(), module: module)
     }
     
     // custom logging to manually adjust values
-    func objCLog(level: AppLogger.Level, message: String, module: String = "") {
+    func objCLog(level: Logger.Level, message: String, module: String = "") {
         log(level: level, message: message, module: module)
         }
     
     // internal helper which dispatches send to dedicated queue if minLevel is ok
-    private func dispatch_send(level: AppLogger.Level, message: @autoclosure () -> Any, module: String) {
+    private func dispatch_send(level: Logger.Level, message: @autoclosure () -> Any, module: String) {
         var resolvedMessage: String?
-        for dest in AppLogger.destinations {
+        for dest in Logger.destinations {
             guard let queue = dest.queue else {
                 continue
             }

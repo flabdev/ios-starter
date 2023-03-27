@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        AppLogger.shared.info(" =========== App Launched =========== ", module: AppLogger.Module.APPDELEGATE)
+        Logger.shared.info(" =========== App Launched =========== ", module: Logger.Module.APPDELEGATE)
 
         return true
     }
