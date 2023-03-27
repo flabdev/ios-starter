@@ -13,7 +13,7 @@ class FileDestination: LogDestination {
     private var syncAfterEachWrite: Bool = false
     private var fileHandle: FileHandle?
     override var defaultHashValue: Int {
-        AppLogger.shared.info("defaultHashValue set")
+        Logger.shared.info("defaultHashValue set")
         return 2
     }
     
@@ -29,7 +29,7 @@ class FileDestination: LogDestination {
     }
     
     // append to file. uses full base class functionality
-    override func send(_ level: AppLogger.Level, msg: String, module: String = "") -> String? {
+    override func send(_ level: Logger.Level, msg: String, module: String = "") -> String? {
         let formattedString = super.send(level, msg: msg, module: module)
         
         if let str = formattedString {
@@ -137,7 +137,7 @@ class FileDestination: LogDestination {
         do {
             try FileManager.default.createDirectory(at: logDir, withIntermediateDirectories: true, attributes: nil)
         } catch {
-             AppLogger.shared.error("ERROR: Failed to create directory!", module: AppLogger.Module.UTILITIES)
+             Logger.shared.error("ERROR: Failed to create directory!", module: Logger.Module.UTILITIES)
         }
         return logDir
     }

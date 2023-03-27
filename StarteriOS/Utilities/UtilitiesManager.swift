@@ -15,7 +15,7 @@ struct UtilitiesManager {
                 let data = try Data(contentsOf: url)
                 return data
             } catch {
-                AppLogger.shared.error("JSON load failed with error: \(error)")
+                Logger.shared.error("JSON load failed with error: \(error)")
             }
         }
         return nil
@@ -26,7 +26,7 @@ struct UtilitiesManager {
             let decodedObject = try JSONDecoder().decode(T.self, from: data)
             return decodedObject
         } catch {
-            AppLogger.shared.error("Failed to load Decoder object with error: \(error)")
+            Logger.shared.error("Failed to load Decoder object with error: \(error)")
         }
         return nil
     }

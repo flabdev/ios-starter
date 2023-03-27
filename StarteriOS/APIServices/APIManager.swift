@@ -23,20 +23,20 @@ struct APIManager {
         let endpoint = Endpoint.getCards
         APIService.shared.fetchData(url: endpoint.url, requestType: .GET) { data, urlResponce, error in
             guard let responseData = data else {
-                AppLogger.shared.info("urlResponce - \(String(describing: urlResponce))")
+                Logger.shared.info("urlResponce - \(String(describing: urlResponce))")
                 completion(nil, .fail) // The data is nil then send fail status
                 return
             }
             guard let cards = utilitiesManager.loadDecoderObject(data: responseData, type: CardModel.self) else {
-                AppLogger.shared.error("Failed to parse data", module: AppLogger.Module.UTILITIES)
+                Logger.shared.error("Failed to parse data", module: Logger.Module.UTILITIES)
                 completion(nil, .fail)
                 return
             }
-            AppLogger.shared.debug("Card data parsed successful!", module: AppLogger.Module.UTILITIES)
+            Logger.shared.debug("Card data parsed successful!", module: Logger.Module.UTILITIES)
             completion(cards, .pass)
         } onFailure: { error, status in
-            AppLogger.shared.error("staus - \(String(describing: status))")
-            AppLogger.shared.error("Failed to parse data", module: AppLogger.Module.UTILITIES)
+            Logger.shared.error("staus - \(String(describing: status))")
+            Logger.shared.error("Failed to parse data", module: Logger.Module.UTILITIES)
             completion(nil, .fail)
         }
     }

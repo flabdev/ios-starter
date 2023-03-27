@@ -26,7 +26,7 @@
 		B98D834A29BF1A61000B3BAA /* ContextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D833A29BF1A61000B3BAA /* ContextInfo.swift */; };
 		B98D834B29BF1A61000B3BAA /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D833B29BF1A61000B3BAA /* FileDestination.swift */; };
 		B98D834C29BF1A61000B3BAA /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D833C29BF1A61000B3BAA /* LogMessage.swift */; };
-		B98D834D29BF1A61000B3BAA /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D833D29BF1A61000B3BAA /* AppLogger.swift */; };
+		B98D834D29BF1A61000B3BAA /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D833D29BF1A61000B3BAA /* Logger.swift */; };
 		B98D834E29BF1A61000B3BAA /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D833E29BF1A61000B3BAA /* ConsoleDestination.swift */; };
 		B98D834F29BF1A61000B3BAA /* LogDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D833F29BF1A61000B3BAA /* LogDestination.swift */; };
 		B98D835029BF1A61000B3BAA /* TimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D834129BF1A61000B3BAA /* TimeZone.swift */; };
@@ -86,7 +86,7 @@
 		B98D833A29BF1A61000B3BAA /* ContextInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextInfo.swift; sourceTree = "<group>"; };
 		B98D833B29BF1A61000B3BAA /* FileDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDestination.swift; sourceTree = "<group>"; };
 		B98D833C29BF1A61000B3BAA /* LogMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMessage.swift; sourceTree = "<group>"; };
-		B98D833D29BF1A61000B3BAA /* AppLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		B98D833D29BF1A61000B3BAA /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B98D833E29BF1A61000B3BAA /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
 		B98D833F29BF1A61000B3BAA /* LogDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDestination.swift; sourceTree = "<group>"; };
 		B98D834129BF1A61000B3BAA /* TimeZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZone.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				B98D833A29BF1A61000B3BAA /* ContextInfo.swift */,
 				B98D833B29BF1A61000B3BAA /* FileDestination.swift */,
 				B98D833C29BF1A61000B3BAA /* LogMessage.swift */,
-				B98D833D29BF1A61000B3BAA /* AppLogger.swift */,
+				B98D833D29BF1A61000B3BAA /* Logger.swift */,
 				B98D833E29BF1A61000B3BAA /* ConsoleDestination.swift */,
 				B98D833F29BF1A61000B3BAA /* LogDestination.swift */,
 			);
@@ -514,7 +514,7 @@
 				B98D834E29BF1A61000B3BAA /* ConsoleDestination.swift in Sources */,
 				B98D834929BF1A61000B3BAA /* URLEndpoints.swift in Sources */,
 				B98D835029BF1A61000B3BAA /* TimeZone.swift in Sources */,
-				B98D834D29BF1A61000B3BAA /* AppLogger.swift in Sources */,
+				B98D834D29BF1A61000B3BAA /* Logger.swift in Sources */,
 				B98D834B29BF1A61000B3BAA /* FileDestination.swift in Sources */,
 				B98D834A29BF1A61000B3BAA /* ContextInfo.swift in Sources */,
 				B98D834F29BF1A61000B3BAA /* LogDestination.swift in Sources */,
